@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard de Estadísticas Electorales</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(5,4,76,1) 100%);
+    font-family: Arial, sans-serif;
+  }
+
+  .panel {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    margin: 100px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .boton {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .boton:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div class="panel">
+  <h1 style="text-align: center;">Comicios auton&oacute;micos Pa&iacute;s Vasco - 2016</h1>
+  <p style="text-align: center;">Una colecci&oacute;n de resultados de las elecciones del pa&iacute;s Vasco con la cantidad de votos totales y votos por partido</p><br><br>
+  <a href="Html/censo.html" class="boton">Censo</a>
+  <a href="Html/masVotados.html" class="boton">Mas votados</a>
+  <a href="Html/porVotos.html" class="boton">% Votos</a>
+  <p style="text-align: center;">Se puede encontrar la API en el documento PDF</p>
+</div>
+</body>
+</html>

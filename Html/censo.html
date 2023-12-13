@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard de Estadísticas Electorales</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(5,4,76,1) 100%);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .panel {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .titulo {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+
+  .numero {
+    font-size: 48px;
+    color: #000;
+  }
+
+  .boton {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .boton:hover {
+    background-color: #0056b3;
+  }
+
+
+</style>
+</head>
+<body>
+
+<div class="panel">
+  <div class="titulo">Total censados</div>
+  <p style="text-align: center;">Suma del total de poblac&oacute;n censada</p><br>
+  <div id="totalCensados" class="numero">Cargando...</div>
+  <a href="/" class="boton">Main</a>
+</div>
+
+<script>
+window.onload = function() {
+  fetch('http://212.14.122.48:8000/censo')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      document.getElementById('totalCensados').textContent = data.total_censados.toLocaleString('es-ES');
+    })
+    .catch(function(error) {
+      console.error('Error al obtener los datos del censo:', error);
+    });
+};
+</script>
+
+</body>
+</html>
